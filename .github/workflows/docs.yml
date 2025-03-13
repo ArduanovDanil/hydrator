@@ -7,6 +7,8 @@ jobs:
     name: My Job
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout.
+        uses: actions/checkout@v4
       - name: Print a greeting
         env:
           MY_VAR: Hi there! My name is
