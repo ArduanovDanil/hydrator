@@ -15,4 +15,6 @@ jobs:
           LAST_NAME: Octocat
         run: |
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+          ls -al
           touch test_file.txt
+          ls -al
