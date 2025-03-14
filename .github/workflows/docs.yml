@@ -15,7 +15,7 @@ jobs:
       - name:  Create test.txt
         run: |
           ls -al
-          touch test_file.txt
+          touch test.txt
           ls -al
       
       - name: Commit file
