@@ -1,8 +1,9 @@
 name: Commit created file
 
 on: 
-  pull_request:
-    types: [opened]
+  push:
+    paths:
+      - 'docs/guide/en/**'
 
 jobs:
   my-job:
