@@ -1,6 +1,8 @@
-name: Greeting from Mona
+name: Commit created file
 
-on: push
+on: 
+  pull_request:
+    types: [opened]
 
 jobs:
   my-job:
@@ -9,14 +11,16 @@ jobs:
     steps:
       - name: Checkout.
         uses: actions/checkout@v4
-      - name: Print a greeting
-        env:
-          MY_VAR: Hi there! My name is
-          FIRST_NAME: Mona
-          MIDDLE_NAME: The
-          LAST_NAME: Octocat
+
+      - name:  Create test.txt
         run: |
-          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
           ls -al
           touch test_file.txt
           ls -al
+      
+      - name: Commit file
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: 'test.txt'
+          message: 'Added test.txt'
+          push: true
