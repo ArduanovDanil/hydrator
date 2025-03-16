@@ -31,3 +31,12 @@ jobs:
         run: |
           sudo apt -q update
           sudo apt install -qy build-essential
+          sudo apt install -qy gettext liblocale-gettext-perl xsltproc
+          sudo cpan -T install Module::Build
+          sudo cpan -T install Locale::gettext
+          sudo cpan -T install Unicode::GCString
+          sudo cpan -T install Text::WrapI18N
+          sudo cpan -T install Term::ReadKey
+          sudo cpan -T install YAML::Tiny
+          sudo cpan -T install Syntax::Keyword::Try
+          git clone https://github.com/mquinson/po4a.git
