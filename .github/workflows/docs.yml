@@ -25,3 +25,9 @@ jobs:
           add: 'test.txt'
           message: 'Added test.txt'
           push: true
+
+      - name: install po4a
+        run: |
+          apt-get -q update
+          apt-get -qy upgrade
+          apt-get install -qy build-essential
