@@ -29,6 +29,6 @@ jobs:
 
       - name: install po4a
         run: |
-          apt-get -q update
-          apt-get -qy upgrade
-          apt-get install -qy build-essential
+          sudo apt -q update
+          sudo apt -qy upgrade
+          sudo apt install -qy build-essential
