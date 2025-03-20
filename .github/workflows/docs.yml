@@ -39,6 +39,7 @@ jobs:
      
       - name: Install Debian dependencies
         run: |
+          ls -al
           sudo apt update 
           sudo apt install -y liblocale-gettext-perl libtext-wrapi18n-perl libunicode-linebreak-perl libpod-parser-perl libtest-pod-perl libyaml-tiny-perl libsyntax-keyword-try-perl
           sudo apt install -y cpanminus gettext docbook-xml docbook-xsl docbook xsltproc
