@@ -27,20 +27,25 @@ jobs:
           message: 'Added test.txt'
           push: true
 
-      - name: install po4a
+      - name: Install Debian dependencies
         run: |
-          sudo apt -q update
-          sudo apt install -qy build-essential
-          sudo apt install -qy gettext liblocale-gettext-perl xsltproc
-          sudo cpan -T install Module::Build
-          sudo cpan -T install Locale::gettext
-          sudo cpan -T install Unicode::GCString
-          sudo cpan -T install Text::WrapI18N
-          sudo cpan -T install Term::ReadKey
-          sudo cpan -T install YAML::Tiny
-          sudo cpan -T install Syntax::Keyword::Try
+          sudo apt update 
+          sudo apt install -y liblocale-gettext-perl libtext-wrapi18n-perl libunicode-linebreak-perl libpod-parser-perl libtest-pod-perl libyaml-tiny-perl libsyntax-keyword-try-perl
+          sudo apt install -y cpanminus gettext docbook-xml docbook-xsl docbook xsltproc
+          sudo apt install -y texlive-binaries texlive-latex-base opensp libsgmls-perl
+      - name: Install CPAN dependencies
+        run: |
+          cpanm Locale::gettext
+          cpanm http://search.cpan.org/CPAN/authors/id/R/RA/RAAB/SGMLSpm-1.1.tar.gz
+          cpanm Text::WrapI18N
+          cpanm Unicode::GCString
+          cpanm -v --installdeps --notest .
+        
+      - name: Clone po4a
+        run: |
           git clone https://github.com/mquinson/po4a.git
-          cd po4a && perl Build.PL
-          cd po4a && ./Build; exit 0
-          cd po4a && ./Build install
-          po4a --version
+
+      - name: Build po4a
+        run: |
+          cd po4a
+          ls -al
