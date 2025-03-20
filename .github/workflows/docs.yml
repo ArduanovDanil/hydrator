@@ -36,11 +36,11 @@ jobs:
           sudo apt install -y texlive-binaries texlive-latex-base opensp libsgmls-perl
       - name: Install CPAN dependencies
         run: |
-          cpanm Locale::gettext
-          cpanm http://search.cpan.org/CPAN/authors/id/R/RA/RAAB/SGMLSpm-1.1.tar.gz
-          cpanm Text::WrapI18N
-          cpanm Unicode::GCString
-          cpanm -v --installdeps --notest .
+          sudo cpanm Locale::gettext
+          sudo cpanm http://search.cpan.org/CPAN/authors/id/R/RA/RAAB/SGMLSpm-1.1.tar.gz
+          sudo cpanm Text::WrapI18N
+          sudo cpanm Unicode::GCString
+          sudo cpanm -v --installdeps --notest .
         
       - name: Clone po4a
         run: |
