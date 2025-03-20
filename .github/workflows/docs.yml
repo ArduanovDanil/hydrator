@@ -5,6 +5,7 @@ on:
     paths:
       - 'docs/guide/en/**'
       - 'docs/guide/test/**'
+      - '.github/**'
 
 jobs:
   my-job:
