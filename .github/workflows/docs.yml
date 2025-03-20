@@ -53,7 +53,7 @@ jobs:
       - name: Build po4a
         working-directory: ./po4a
         run: |
-          perl Build.PL
+          sudo perl Build.PL
           COLUMNS=120 ./Build verbose=1
           sudo ./Build install
           po4a --version
