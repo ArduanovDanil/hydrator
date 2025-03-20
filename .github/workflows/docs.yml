@@ -31,11 +31,6 @@ jobs:
       - name: Clone po4a
         run: |
           git clone https://github.com/mquinson/po4a.git
-
-      - name: Cd to po4a
-        run: |
-          cd po4a
-          ls -al
      
       - name: Install Debian dependencies
         run: |
@@ -46,14 +41,21 @@ jobs:
           sudo apt install -y texlive-binaries texlive-latex-base opensp libsgmls-perl
       
       - name: Install CPAN dependencies
+        working-directory: ./po4a
         run: |
-          ls -al
-          cd po4a
           ls -al
           sudo cpanm Locale::gettext
           sudo cpanm http://search.cpan.org/CPAN/authors/id/R/RA/RAAB/SGMLSpm-1.1.tar.gz
           sudo cpanm Text::WrapI18N
           sudo cpanm Unicode::GCString
           sudo cpanm -v --installdeps --notest .
+
+      - name: Build po4a
+        working-directory: ./po4a
+        run: |
+          perl Build.PL
+          COLUMNS=120 ./Build verbose=1
+          sudo ./Build install
+          po4a --version
         
 
