@@ -57,5 +57,8 @@ jobs:
           sudo COLUMNS=120 ./Build verbose=1
           sudo ./Build install
           po4a --version
-        
+          
+      - name: Use po4a
+        run: |
+          po4a --version
 
