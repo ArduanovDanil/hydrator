@@ -12,8 +12,10 @@ jobs:
     name: My Job
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout.
+      - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
       - name:  Create test.txt
         run: |
@@ -64,4 +66,10 @@ jobs:
           po4a --version
           po4a po4a.cfg
           ls -al
+
+      - name: Commit changed files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: 'docs'
+
 
