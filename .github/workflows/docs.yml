@@ -1,10 +1,9 @@
-name: Commit created file
+name: Update docs translation
 
 on: 
   push:
     paths:
       - 'docs/guide/en/**'
-      - 'docs/guide/test/**'
       - '.github/**'
 
 jobs:
@@ -16,20 +15,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-
-      - name:  Create test.txt
-        run: |
-          ls -al
-          touch test.txt
-          ls -al
-      
-      - name: Commit file
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: 'test.txt'
-          message: 'Added test.txt'
-          push: true
-
+          
       - name: Clone po4a
         run: |
           git clone https://github.com/mquinson/po4a.git
@@ -70,6 +56,7 @@ jobs:
       - name: Commit changed files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
+          commit_message: Update docs translation
           file_pattern: 'docs'
 
 
