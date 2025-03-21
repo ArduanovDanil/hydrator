@@ -17,7 +17,7 @@ jobs:
 
       - name: Clone po4a
         run: |
-          git clone https://github.com/mquinson/po4a.git
+          git clone https://github.com/mquinson/po4a.git --branch=v0.73
      
       - name: Install Debian dependencies
         run: |
