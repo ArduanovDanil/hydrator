@@ -41,6 +41,7 @@ jobs:
           sudo perl Build.PL
           sudo COLUMNS=120 ./Build verbose=1
           sudo ./Build install
+          po4a --version
 
       - name: Use po4a
         working-directory: ./docs
