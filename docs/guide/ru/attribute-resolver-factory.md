@@ -1,8 +1,8 @@
 # Фабрика обработчиков атрибутов
 
-The test hydrator uses `AttributeResolverFactoryInterface` implementation to
-create attribute resolvers.  The package provides two implementations out of
-the box:
+The test 2 hydrator uses `AttributeResolverFactoryInterface` implementation
+to create attribute resolvers.  The package provides two implementations out
+of the box:
 
 - `ReflectionAttributeResolverFactory`. Использует рефлексию для создания
   обработчика атрибута и может создавать обработчики только без
