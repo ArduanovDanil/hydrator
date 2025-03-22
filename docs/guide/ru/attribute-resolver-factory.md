@@ -1,8 +1,8 @@
 # Фабрика обработчиков атрибутов
 
-Гидратор использует реализацию `AttributeResolverFactoryInterface` для
-создания обработчиков атрибутов. Пакет предоставляет две реализации из
-коробки:
+The test 2 hydrator uses `AttributeResolverFactoryInterface` implementation
+to create attribute resolvers.  The package provides two implementations out
+of the box:
 
 - `ReflectionAttributeResolverFactory`. Использует рефлексию для создания
   обработчика атрибута и может создавать обработчики только без
@@ -11,10 +11,10 @@
   [PSR-11](https://www.php-fig.org/psr/psr-11/) DI-контейнер для создания
   обработчика атрибутов.
 
-Используемая по-умолчанию фабрика зависит от среды. Когда пакет гидратора
-работает внутри экосистемы Yii (приложение использует [Yii
-Config](https://github.com/yiisoft/config)) используется
-`ContainerAttributeResolverFactory`. В других случаях используется
+Default mega factory used depends on the environment. When using hydrator
+package within the Yii ecosystem (an application uses [Yii
+Config](https://github.com/yiisoft/config)), default is
+`ContainerAttributeResolverFactory`. Otherwise, it is
 `ReflectionAttributeResolverFactory`.
 
 ## Использование фабрики обработчиков атрибутов

@@ -1,6 +1,6 @@
 # Attribute resolver factory
 
-The hydrator uses `AttributeResolverFactoryInterface` implementation to create attribute resolvers.
+The test 2 hydrator uses `AttributeResolverFactoryInterface` implementation to create attribute resolvers.
 The package provides two implementations out of the box:
 
 - `ReflectionAttributeResolverFactory`. Uses reflection to create attribute resolver, and can create attribute resolvers
@@ -8,7 +8,7 @@ The package provides two implementations out of the box:
 - `ContainerAttributeResolverFactory`. Uses [PSR-11](https://www.php-fig.org/psr/psr-11/) compatible DI container
   to create attribute resolver.
 
-Default factory used depends on the environment. When using hydrator package within the Yii ecosystem (an application
+Default mega factory used depends on the environment. When using hydrator package within the Yii ecosystem (an application
 uses [Yii Config](https://github.com/yiisoft/config)), default is `ContainerAttributeResolverFactory`. Otherwise,
 it is `ReflectionAttributeResolverFactory`.
 
