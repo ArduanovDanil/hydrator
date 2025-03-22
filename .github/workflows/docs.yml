@@ -3,7 +3,7 @@ name: Update docs translation
 on: 
   push:
     paths:
-      - 'docs/guide/en/**'
+      - 'docs/guide/**'
 
 jobs:
   update-docs:
