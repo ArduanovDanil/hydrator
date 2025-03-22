@@ -1,5 +1,7 @@
 # Attribute resolver factory
 
+New line for test docs translate
+
 The hydrator uses `AttributeResolverFactoryInterface` implementation to create attribute resolvers.
 The package provides two implementations out of the box:
 
