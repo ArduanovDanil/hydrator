@@ -28,6 +28,3 @@ phpunit.phar
 /phpunit.xml
 # phpunit cache
 /.phpunit.cache
-
-# po4a .mo files
-*.mo
