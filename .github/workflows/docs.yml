@@ -15,6 +15,11 @@ jobs:
           ref: ${{ github.head_ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
 
+    - name: Configure PATH for GNU tar
+      run: |
+        sudo apt-get install -y tar
+        echo "PATH=/usr/bin:$PATH" >> $GITHUB_ENV
+
       - name: Clone po4a
         run: |
           git clone https://github.com/mquinson/po4a.git --branch=v0.73
@@ -25,6 +30,8 @@ jobs:
         with:
           path: /var/lib/apt/lists/
           key: ${{ runner.os }}-apt-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-apt-
 
       - name: Install Debian dependencies
         run: |
@@ -34,12 +41,14 @@ jobs:
           sudo apt install -y texlive-binaries texlive-latex-base opensp libsgmls-perl
 
       - name: Cache CPAN dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: cache-cpan
         with:
           path: ~/.cpanm
           key: ${{ runner.os }}-cpan-${{ hashFiles('po4a/cpanfile') }}
-          
+          restore-keys: |
+            ${{ runner.os }}-cpan-
+
       - name: Install CPAN dependencies
         working-directory: ./po4a
         run: |
