@@ -19,6 +19,13 @@ jobs:
         run: |
           git clone https://github.com/mquinson/po4a.git --branch=v0.73
 
+      - name: Cache Debian dependencies
+        uses: actions/cache@v4
+        id: cache-deps
+        with:
+          path: /var/lib/apt/lists/
+          key: ${{ runner.os }}-apt-${{ hashFiles('package-lock.json') }}
+
       - name: Install Debian dependencies
         run: |
           sudo apt update
@@ -26,6 +33,13 @@ jobs:
           sudo apt install -y cpanminus gettext docbook-xml docbook-xsl docbook xsltproc
           sudo apt install -y texlive-binaries texlive-latex-base opensp libsgmls-perl
 
+      - name: Cache CPAN dependencies
+        uses: actions/cache@v3
+        id: cache-cpan
+        with:
+          path: ~/.cpanm
+          key: ${{ runner.os }}-cpan-${{ hashFiles('po4a/cpanfile') }}
+          
       - name: Install CPAN dependencies
         working-directory: ./po4a
         run: |
