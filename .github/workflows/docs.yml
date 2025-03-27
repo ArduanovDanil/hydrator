@@ -15,10 +15,10 @@ jobs:
           ref: ${{ github.head_ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
 
-    - name: Configure PATH for GNU tar
-      run: |
-        sudo apt-get install -y tar
-        echo "PATH=/usr/bin:$PATH" >> $GITHUB_ENV
+      - name: Configure PATH for GNU tar
+        run: |
+          sudo apt-get install -y tar
+          echo "PATH=/usr/bin:$PATH" >> $GITHUB_ENV
 
       - name: Clone po4a
         run: |
