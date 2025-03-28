@@ -17,10 +17,11 @@ jobs:
   container:
     runs-on: ubuntu-latest
     container: arduanovdanil/po4a-fork:latest
+    volumes:
+        - test:/docs
     steps:
-      - run: |
+      - name: Run in container
+        run: |
           echo This job does specify a container.
           echo It runs in the container instead of the VM.
-        name: Run in container
-
-
+          ls -al
