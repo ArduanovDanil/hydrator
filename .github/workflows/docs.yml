@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     container: arduanovdanil/po4a-fork:latest
     volumes:
-        - test:docs
+        - docs:docs
     steps:
       - name: Run in container
         run: |
