@@ -20,4 +20,6 @@ jobs:
       - name: Use container
         run: |
           ls -al
-          po4a --version  # Теперь доступно
+          po4a --version
+          cs test
+          ls -al
