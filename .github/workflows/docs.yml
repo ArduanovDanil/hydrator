@@ -34,4 +34,4 @@ jobs:
 
       - name: Run in container
         run: |
-          ls -al docs/
+          ls -al
