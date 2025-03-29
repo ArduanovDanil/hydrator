@@ -23,3 +23,4 @@ jobs:
       - name: Use container
         run: |
           ls -al
+          po4a --version
