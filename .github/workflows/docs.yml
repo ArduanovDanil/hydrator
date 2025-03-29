@@ -12,7 +12,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           sparse-checkout: |
-            docs
+            .github
+            src
 
       - name: Run in container
         run: |
