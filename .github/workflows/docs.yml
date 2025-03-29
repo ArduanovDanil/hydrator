@@ -20,7 +20,7 @@ jobs:
         run: |
           po4a --version
           ls -al
-          cd src
+          cd docs
           ls -al
           echo This job does specify a container.
           echo It runs in the container instead of the VM.
