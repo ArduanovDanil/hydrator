@@ -7,6 +7,7 @@ jobs:
   update-docs:
     name: Update docs
     runs-on: ubuntu-latest
+    container: arduanovdanil/po4a-fork:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -14,11 +15,7 @@ jobs:
           token: ${{ secrets.token || github.token }}
           ref: ${{ github.head_ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
-  container:
-    name: Use container
-    runs-on: ubuntu-latest
-    container: arduanovdanil/po4a-fork:latest
-    steps:
+          
       - name: Run in container
         run: |
           po4a --version
