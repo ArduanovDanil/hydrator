@@ -10,7 +10,7 @@ jobs:
     container: arduanovdanil/po4a-fork:latest  # Контейнер как среда
     steps:
       - name: Checkout
-        working-directory: ./testt
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.token || github.token }}
           ref: ${{ github.head_ref }}
