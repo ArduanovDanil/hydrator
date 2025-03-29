@@ -4,14 +4,11 @@ on:
   push:
 
 jobs:
+jobs:
   update-docs:
     name: Update docs
     runs-on: ubuntu-latest
-    services:
-      po4a:
-        image: arduanovdanil/po4a-fork:latest
-        volumes:
-          - docs:/docs
+    container: arduanovdanil/po4a-fork:latest  # Контейнер как среда
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,5 +19,5 @@ jobs:
 
       - name: Use container
         run: |
-          ls -al
-          po4a --version
+          ls -al /github/workspace/docs  # Проверка файлов
+          po4a --version  # Теперь доступно
