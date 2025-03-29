@@ -11,12 +11,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        permissions:
-          contents: read
         with:
           token: ${{ secrets.token || github.token }}
           ref: ${{ github.head_ref }}
           repository: ${{ github.repository}}
+          permissions:
+            contents: read
 
       - name: Run in container
         run: |
