@@ -17,6 +17,5 @@ jobs:
 
       - name: Run in container
         run: |
+          pwd
           ls -al
-          echo This job does specify a container.
-          echo It runs in the container instead of the VM.
