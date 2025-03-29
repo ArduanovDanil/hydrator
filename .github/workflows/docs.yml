@@ -22,6 +22,7 @@ jobs:
             options: -v ${{ github.workspace }}:/src
             run: |
                 cd docs
+                po4a --version
                 po4a po4a.cfg
 
       - name: Commit changed files
