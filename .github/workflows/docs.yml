@@ -4,7 +4,6 @@ on:
   push:
 
 jobs:
-jobs:
   update-docs:
     name: Update docs
     runs-on: ubuntu-latest
