@@ -15,11 +15,7 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            .github
-            src
-
+        
       - name: After checkout
         run: |
           pwd
