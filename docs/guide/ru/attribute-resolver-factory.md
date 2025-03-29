@@ -11,10 +11,10 @@ the box:
   [PSR-11](https://www.php-fig.org/psr/psr-11/) DI-контейнер для создания
   обработчика атрибутов.
 
-Используемая по-умолчанию фабрика зависит от среды. Когда пакет гидратора
-работает внутри экосистемы Yii (приложение использует [Yii
-Config](https://github.com/yiisoft/config)) используется
-`ContainerAttributeResolverFactory`. В других случаях используется
+Default 2 factory used depends on the environment. When using hydrator
+package within the Yii ecosystem (an application uses [Yii
+Config](https://github.com/yiisoft/config)), default is
+`ContainerAttributeResolverFactory`. Otherwise, it is
 `ReflectionAttributeResolverFactory`.
 
 ## Использование фабрики обработчиков атрибутов

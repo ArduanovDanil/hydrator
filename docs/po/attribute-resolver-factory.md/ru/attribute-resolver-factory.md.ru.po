@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-03-29 16:04+0000\n"
+"POT-Creation-Date: 2025-03-29 16:44+0000\n"
 "PO-Revision-Date: 2025-03-24 20:33+0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -42,7 +42,9 @@ msgstr "`ContainerAttributeResolverFactory`. Использует совмест
 
 #. type: Plain text
 #: guide/en/attribute-resolver-factory.md
-msgid "Default factory used depends on the environment. When using hydrator package within the Yii ecosystem (an application uses [Yii Config](https://github.com/yiisoft/config)), default is `ContainerAttributeResolverFactory`. Otherwise, it is `ReflectionAttributeResolverFactory`."
+#, fuzzy
+#| msgid "Default factory used depends on the environment. When using hydrator package within the Yii ecosystem (an application uses [Yii Config](https://github.com/yiisoft/config)), default is `ContainerAttributeResolverFactory`. Otherwise, it is `ReflectionAttributeResolverFactory`."
+msgid "Default 2 factory used depends on the environment. When using hydrator package within the Yii ecosystem (an application uses [Yii Config](https://github.com/yiisoft/config)), default is `ContainerAttributeResolverFactory`. Otherwise, it is `ReflectionAttributeResolverFactory`."
 msgstr "Используемая по-умолчанию фабрика зависит от среды. Когда пакет гидратора работает внутри экосистемы Yii (приложение использует [Yii Config](https://github.com/yiisoft/config)) используется `ContainerAttributeResolverFactory`. В других случаях используется `ReflectionAttributeResolverFactory`."
 
 #. type: Title ##
