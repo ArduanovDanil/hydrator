@@ -8,6 +8,11 @@ jobs:
     name: Update docs
     runs-on: ubuntu-latest
     steps:
+      - name: Before checkout
+        run: |
+          pwd
+          ls -al
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -15,7 +20,7 @@ jobs:
             .github
             src
 
-      - name: Run in container
+      - name: After checkout
         run: |
           pwd
           ls -al
