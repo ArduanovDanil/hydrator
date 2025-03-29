@@ -18,7 +18,7 @@ jobs:
       - name: Use po4a
         uses: addnab/docker-run-action@v3
         with:
-            image: arduanovdanil/po4a-fork:latest
+            image: arduanovdanil/po4a-fork:v0.73
             options: -v ${{ github.workspace }}:/src
             run: |
                 cd docs
