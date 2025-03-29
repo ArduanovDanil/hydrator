@@ -8,6 +8,8 @@ jobs:
     name: Update docs
     runs-on: ubuntu-latest
     container: arduanovdanil/po4a-fork:latest
+    volumes:
+      - /github/wokrspace:/github/workspace
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,10 +23,8 @@ jobs:
       - name: Run in container
         run: |
           po4a --version
-          ls -al
-          cd docs
+          ls -al /github/workspace/docs
+          cd /github/workspace/docs
           ls -al
           echo This job does specify a container.
           echo It runs in the container instead of the VM.
-          cd ..
-          ls -al
