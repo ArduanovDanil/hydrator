@@ -18,5 +18,5 @@ jobs:
 
       - name: Use container
         run: |
-          ls -al /github/workspace/docs  # Проверка файлов
+          ls -al
           po4a --version  # Теперь доступно
