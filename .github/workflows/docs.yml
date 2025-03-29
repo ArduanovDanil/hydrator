@@ -8,15 +8,30 @@ jobs:
     name: Update docs
     runs-on: ubuntu-latest
     steps:
-      - name: Before checkout
-        run: |
-          pwd
-          ls -al
-
       - name: Checkout
         uses: actions/checkout@v4
-        
-      - name: After checkout
+        with:
+          token: ${{ secrets.token || github.token }}
+          ref: ${{ github.head_ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: docs/
+
+  container:
+    name: Use container
+    runs-on: ubuntu-latest
+    container: arduanovdanil/po4a-fork:latest
+    needs: update-docs  # Указывает зависимость от первого задания
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: docs
+
+      - name: Run in container
         run: |
-          pwd
-          ls -al
+          ls -al docs/
