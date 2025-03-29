@@ -7,6 +7,11 @@ jobs:
   update-docs:
     name: Update docs
     runs-on: ubuntu-latest
+    services:
+      po4a:
+        image: arduanovdanil/po4a-fork:latest
+        volumes:
+          - docs:/docs
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -16,7 +21,5 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
 
       - name: Use container
-        container:
-          image: arduanovdanil/po4a-fork:latest
-          volumes:
-            - docs:/docs
+        run: |
+          ls -al
