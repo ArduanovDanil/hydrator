@@ -19,6 +19,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
             image: arduanovdanil/po4a-fork:latest
-            options: -v ${{ github.workspace }}:/var/www
+            options: -v ${{ github.workspace }}:/
             run: |
                 ls -al
+                po4a --version
