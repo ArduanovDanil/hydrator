@@ -21,5 +21,5 @@ jobs:
             image: arduanovdanil/po4a-fork:latest
             options: -v ${{ github.workspace }}:/src
             run: |
-                ls -al
-                po4a --version
+                cd docs
+                po4a po4a.cfg
