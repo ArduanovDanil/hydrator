@@ -15,23 +15,8 @@ jobs:
           ref: ${{ github.head_ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: docs
-          path: docs
-
-  container:
-    name: Use container
-    runs-on: ubuntu-latest
-    container: arduanovdanil/po4a-fork:latest
-    needs: update-docs  # Указывает зависимость от первого задания
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: docs
-
-      - name: Run in container
-        run: |
-          ls -al
+      - name: Use container
+        container:
+          image: arduanovdanil/po4a-fork:latest
+          volumes:
+            - docs:/docs
