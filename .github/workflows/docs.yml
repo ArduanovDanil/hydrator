@@ -15,6 +15,8 @@ jobs:
           token: ${{ secrets.token || github.token }}
           ref: ${{ github.head_ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
+          run: |
+            ls -al
 
       - name: Run in container
         run: |
