@@ -21,5 +21,5 @@ jobs:
         run: |
           ls -al
           po4a --version
-          cs test
+          cd test
           ls -al
