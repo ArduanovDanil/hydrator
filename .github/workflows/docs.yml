@@ -7,7 +7,7 @@ jobs:
   update-docs:
     name: Update docs
     runs-on: ubuntu-latest
-    #container: arduanovdanil/po4a-fork:latest
+    container: arduanovdanil/po4a-fork:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
