@@ -9,13 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     container: arduanovdanil/po4a-fork:latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.token || github.token }}
-          ref: ${{ github.head_ref }}
-          sparse-checkout: |
-            src
+
 
       - name: Run in container
         run: |
