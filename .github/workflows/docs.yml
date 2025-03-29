@@ -21,8 +21,6 @@ jobs:
       - name: Run in container
         run: |
           po4a --version
-          ls -al /github/workspace/docs
-          cd /github/workspace/docs
-          ls -al
+          ls -al /github/workspace/
           echo This job does specify a container.
           echo It runs in the container instead of the VM.
