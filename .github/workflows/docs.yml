@@ -23,3 +23,9 @@ jobs:
             run: |
                 cd docs
                 po4a po4a.cfg
+
+      - name: Commit changed files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update docs translation
+          file_pattern: 'docs'
