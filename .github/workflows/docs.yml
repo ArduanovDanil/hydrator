@@ -15,12 +15,10 @@ jobs:
           token: ${{ secrets.token || github.token }}
           ref: ${{ github.head_ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
-          run: |
-            ls -al
 
       - name: Run in container
         run: |
           po4a --version
-          ls -al /github/workspace/
+          ls -al
           echo This job does specify a container.
           echo It runs in the container instead of the VM.
