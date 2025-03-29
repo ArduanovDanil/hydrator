@@ -7,11 +7,6 @@ jobs:
   update-docs:
     name: Update docs
     runs-on: ubuntu-latest
-    services:
-      po4a:
-        image: arduanovdanil/po4a-fork:latest
-        volumes:
-          - docs:/docs
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,6 +15,10 @@ jobs:
           ref: ${{ github.head_ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
 
-      - name: List files in container
-        run: |
-          docker exec -it $(docker ps -q --filter "ancestor=arduanovdanil/po4a-fork:latest") ls -al /docs
+      - name: Use po4a
+        uses: addnab/docker-run-action@v3
+        with:
+            image: arduanovdanil/po4a-fork:latest
+            options: -v ${{ github.workspace }}:/var/www
+            run: |
+                ls -al
